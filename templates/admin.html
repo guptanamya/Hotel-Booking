@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="/static/style.css">
+{% block content %}
+<h1>Welcome, Admin</h1>
+<h2>Booking Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Adults</th>
+            <th>Children</th>
+            <th>Rooms</th>
+            <th>Request</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in booking_data %}
+        <tr>
+            <td>{{ booking.id }}</td>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.user_email }}</td>
+            <td>{{ booking.user_checkin }}</td>
+            <td>{{ booking.user_checkout }}</td>
+            <td>{{ booking.user_adult }}</td>
+            <td>{{ booking.user_child }}</td>
+            <td>{{ booking.user_room }}</td>
+            <td>{{ booking.user_request }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+        
+        
+    
+        <a href="{{ url_for('logout' ) }}" style="border: 1px solid blue;"> logout </a>
+    </div>
+    </div>
+
+{% endblock %}

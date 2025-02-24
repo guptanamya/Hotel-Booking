@@ -1,0 +1,327 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8fbff;
+}
+
+.booking-section {
+    text-align: center;
+    padding: 40px 10%;
+}
+
+.booking-title span {
+    color: blue;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+}
+
+.booking-subtitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.booking-subtitle .highlight {
+    color: Blue;
+}
+
+.booking-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .booking-images {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.booking-images img {
+    width: 48%;
+    border-radius: 8px;
+} */
+
+.booking-images img {
+    /* width: 48%; */
+
+    border-radius: 8px;
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.8); /* Start slightly smaller */
+    animation: popOut 0.6s ease-out forwards; /* Apply animation */
+}
+
+/* Add delay to each image */
+.booking-images img:nth-child(1) { animation-delay: 0.2s; }
+.booking-images img:nth-child(2) { animation-delay: 0.4s; }
+.booking-images img:nth-child(3) { animation-delay: 0.6s; }
+.booking-images img:nth-child(4) { animation-delay: 0.8s; }
+
+/* Keyframes for the pop-out effect */
+@keyframes popOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.booking-form {
+    width: 50%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select,
+textarea {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+
+.btn-book {
+    width: 100%;
+    padding: 12px;
+    background-color: blue;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-book:hover {
+    background-color: Blue;
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="booking-section">
+        <h3 class="booking-title"><span>Update Now</span></h3>
+        <h2 class="booking-subtitle">Update Your<span class="highlight">Information here! </span></h2>
+        
+        <div class="booking-container">
+            <div class="booking-images">
+                <div>
+
+                    <img src="hotel-html-template/img/about-1.jpg" alt="Luxury Pool" style="height: 200px; width: 200px;">
+                    <img src="hotel-html-template/img/about-2.jpg" alt="Beach View" style="height:250px; width: 250px;">
+                </div>
+                <img src="hotel-html-template/img/about-3.jpg" alt="Resort Stay" style="height: 260px; width: 260px;">
+                <img src="hotel-html-template/img/about-4.jpg" alt="Relaxing Spot" style="height: 230px; width: 230px;">
+            </div>
+            <div class="booking-form">
+                <form  method="POST">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name"  name="name"  id="yourName" value="{{data.name}}">
+                        <input type="email" placeholder="Your Email" name="user_email" id="YourEmail" value="{{data.email}}" >
+                    </div>
+                    <div class="form-group">
+                        <input type="date" placeholder="Check In" name="user_checkin" id="yourCheckInn" value="{{data.checkin}}">
+                        <input type="date" placeholder="Check Out" name="user_checkout" id="yourCheckOut" value="{{data.user_checkout}}" >
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Adult" name="user_adult" id="yourAdult" value="{{data.adult}}">
+                        <input type="text" placeholder="Child" name="user_child" id="yourChild" value="{{data.child}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Room" name="user_room" id="yourRoom" value="{{data.room}}" >
+                    </div>
+                    <textarea placeholder="Special Request" name="user_request" id="yourRequest" value="{{data.request}}"></textarea>
+                    <button type="submit" class="btn-book">Updated</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8fbff;
+        }
+
+        .booking-section {
+            text-align: center;
+            padding: 40px 10%;
+        }
+
+        .booking-title span {
+            color: blue;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+
+        .booking-subtitle {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .booking-subtitle .highlight {
+            color: blue;
+        }
+
+        .booking-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .booking-images img {
+            border-radius: 8px;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: popOut 0.6s ease-out forwards;
+        }
+
+        .booking-images img:nth-child(1) { animation-delay: 0.2s; }
+        .booking-images img:nth-child(2) { animation-delay: 0.4s; }
+        .booking-images img:nth-child(3) { animation-delay: 0.6s; }
+        .booking-images img:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes popOut {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .booking-form {
+            width: 50%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        textarea {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            resize: none;
+        }
+
+        .btn-book {
+            width: 100%;
+            padding: 12px;
+            background-color: blue;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-book:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="booking-section">
+        <h3 class="booking-title"><span>Update Now</span></h3>
+        <h2 class="booking-subtitle">Update Your <span class="highlight">Information here!</span></h2>
+        
+        <div class="booking-container">
+            <div class="booking-images">
+                <div>
+                    <img src="/static/images/about-1.jpg" alt="Luxury Pool" style="height: 200px; width: 200px;">
+                    <img src="/static/images/about-2.jpg" alt="Beach View" style="height: 250px; width: 250px;">
+                </div>
+                <img src="/static/images/about-3.jpg" alt="Resort Stay" style="height: 260px; width: 260px;">
+                <img src="/static/images/about-4.jpg" alt="Relaxing Spot" style="height: 230px; width: 230px;">
+            </div>
+
+            <div class="booking-form">
+                <form method="POST" action="{{ url_for('update_booking', booking_id=data.id) }}">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" name="name" value="{{ data.name }}" required>
+                        <input type="email" placeholder="Your Email" name="user_email" value="{{ data.user_email }}" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="user_checkin" value="{{ data.user_checkin }}" required>
+                        <input type="date" name="user_checkout" value="{{ data.user_checkout }}" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Adult" name="user_adult" value="{{ data.user_adult }}" required>
+                        <input type="number" placeholder="Child" name="user_child" value="{{ data.user_child }}" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Room" name="user_room" value="{{ data.user_room }}" required>
+                    </div>
+                    <textarea placeholder="Special Request" name="user_request">{{ data.user_request }}</textarea>
+                    <button type="submit" class="btn-book">Update</button>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>

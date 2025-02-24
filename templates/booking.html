@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8fbff;
+}
+
+.booking-section {
+    text-align: center;
+    padding: 40px 10%;
+}
+
+.booking-title span {
+    color:blue;
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
+}
+
+.booking-subtitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.booking-subtitle .highlight {
+    color: blue;
+}
+
+.booking-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.booking-images img {
+    /* width: 48%; */
+
+    border-radius: 8px;
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.8); /* Start slightly smaller */
+    animation: popOut 0.6s ease-out forwards; /* Apply animation */
+}
+/* Add delay to each image */
+.booking-images img:nth-child(1) { animation-delay: 0.2s; }
+.booking-images img:nth-child(2) { animation-delay: 0.4s; }
+.booking-images img:nth-child(3) { animation-delay: 0.6s; }
+.booking-images img:nth-child(4) { animation-delay: 0.8s; }
+
+/* Keyframes for the pop-out effect */
+@keyframes popOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.booking-form {
+    width: 50%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select,
+textarea {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+.flash-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: green;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            font-weight: bold;
+        }
+.btn-book {
+    width: 100%;
+    padding: 12px;
+    background-color: blue;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-book:hover {
+    background-color: blue;
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="booking-section">
+        <h3 class="booking-title"><span>ROOM BOOKING</span></h3>
+        <h2 class="booking-subtitle">Book A <span class="highlight">LUXURY ROOM</span></h2>
+        
+        <div class="booking-container">
+            <div class="booking-images">
+                <div>
+                    <img src="https://t3.ftcdn.net/jpg/00/29/13/38/360_F_29133877_bfA2n7cWV53fto2BomyZ6pyRujJTBwjd.jpg" alt="Beach View" style="height:180px; width: 190px;">
+                    <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg" alt="Beach View" style="height:220px; width: 250px;">
+
+                </div>
+                <img src="https://images.pexels.com/photos/70441/pexels-photo-70441.jpeg?cs=srgb&dl=pexels-amar-saleem-15661-70441.jpg&fm=jpg" alt="Resort Stay" style="height: 220px; width: 230px;margin-right: 70px;">
+                <img src="https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o=" alt="Relaxing Spot" style="height: 190px; width: 200px;">
+            </div>
+            <div class="booking-form">
+                <form action="/booking" method="POST" id="booking-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name"  name="name"  id="yourName" required >
+                        <input type="email" placeholder="Your Email" name="user_email" id="YourEmail" required >
+                    </div>
+                    <div class="form-group">
+                        <input type="date" placeholder="Check In" name="user_checkin" id="yourCheckInn" required>
+                        <input type="date" placeholder="Check Out" name="user_checkout" id="yourCheckOut" required >
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Adult" name="user_adult" id="yourAdult" required min="0">
+                        <input type="number" placeholder="Child" name="user_child" id="yourChild" required min="0">
+                        
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Room" name="user_room" id="yourRoom" required min="1">
+                    </div>
+                    <textarea placeholder="Special Request" name="user_request" id="yourRequest"></textarea>
+                    <button type="submit" class="btn-book">BOOK NOW</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+  
+</body>
+</html> 
+
+

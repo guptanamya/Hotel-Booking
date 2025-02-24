@@ -1,0 +1,782 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>StayFinder</title>
+{% endblock %}
+{% block contentStyle %}
+{% endblock %}
+
+{% block section %}
+<section class="home" z-index="2" style="height:500px;">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
+    <div class="carousel-inner" style="height:500px;">
+      <div class="carousel-item active" data-bs-interval="1000">
+        <img src="/static/images/banner-1.png"  class="d-block w-100" alt="...">
+        <div class="text">
+          <h1>Spend Your Holiday</h1>
+          <h4>"Your Perfect Stay, Just a Click Away!"</h4>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="1500">
+        <img src="/static/images/banner-2.png"  class="d-block w-100" alt="...">
+        <div class="text">
+          <h1>Spend Your Holiday</h1>
+          <h4>"Your Perfect Stay, Just a Click Away!"</h4>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="1500">
+        <img src="/static/images/banner-3.png" class="d-block w-100" alt="...">
+        <div class="text">
+          <h1>Spend Your Holiday</h1>
+          <h4>"Your Perfect Stay, Just a Click Away!"</h4>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> 
+  
+
+</section>
+
+  
+{% endblock %}
+{% block content %}
+</script>
+<section class="book">
+  <div class="container flex_space">
+    <div class="text">
+      <h1> <span> Book </span> Your Rooms </h1>
+    </div>
+    <div class="form">
+      <form class="grid">
+        <input type="date" placeholder="Araival Date" style="color: black;">
+        <input type="date" placeholder="Departure Date" style="color: black;">
+        <input type="number" placeholder="Adults" style="color: black;">
+        <input type="number" placeholder="Childern" style="color: black;">
+        <button class="show-prices"><a href="{{ url_for('room' ) }}">CHECK AVAILABILITY</a></button>
+        <!-- <input type="" value="CHECK AVAILABILITY" style="color: black;"> -->
+
+      </form>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.tailwindcss.com">
+</script>
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold mb-2" style="text-align: center; font-size: 50px; font-family: Garamond;">
+   Popular Destinations
+  </h1>
+  <p class="text-gray-600 mb-6" style="text-align: center; font-size: 40px; font-weight: bold; color: black; font-family: Garamond;">
+   We have selected some best locations around the world for you.
+  </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+   <div class="relative">
+       <div class="flip-card" onclick="this.classList.toggle('flipped')">
+           <div class="flip-card-inner">
+               <div class="flip-card-front">
+                   <img alt="Mumbai cityscape at night with lights reflecting on water" class="w-full h-full object-cover rounded-lg" height="400" src="https://www.travoh.com/wp-content/uploads/2021/12/043-The-Ritz-Carlton-Bangalore-Hotel-Bangalore-Karnataka-India-Exterior-Pool-Twilight-View-scaled.jpg"  width="500"/>
+                  <div class="absolute bottom-0 left-0 bg-black  text-white p-4 rounded-b-lg">
+                      <h2 class="text-lg font-bold" style="text-align:left; font-family: Garamond;">Mumbai</h2>
+                      <p class="text-sm"></p>
+                  </div>
+              </div>
+              <div class="flip-card-back">
+                <p>: Known as the "City of Dreams," Mumbai is a bustling metropolis that never sleeps. It's India's financial powerhouse, home to Bollywood, and a melting pot of cultures. The iconic Gateway of India and Marine Drive are must-visit landmarks.</p>
+                  
+              </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="relative">
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  <img alt=" " class="w-full h-full object-cover rounded-lg" height="400" src="static/images/bangalor.jpg" width="500"/>
+                 <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                     <h2 class="text-lg font-bold" style="text-align:left; font-family: Garamond;">Bengaluru</h2>
+                     <p class="text-sm"></p>
+                 </div>
+             </div>
+             <div class="flip-card-back">
+               <p>Often referred to as the "Silicon Valley of India," Bangalore is the country's leading tech hub. The city boasts a pleasant climate, lush parks like Lalbagh and Cubbon Park, and a vibrant nightlife. It's a dynamic blend of tradition and modernity.</p>
+            
+
+              </a>
+             </div>
+          </div>
+      </div>
+  </div>
+
+  
+  <div class="relative">
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  <img alt=" " class="w-full h-full object-cover rounded-lg" height="400" src="static/images/goa copy.jpg" width="500"/>
+                 <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                     <h2 class="text-lg font-bold " style="text-align:left; font-family: Garamond;">Goa</h2>
+                     <p class="text-sm"></p>
+                 </div>
+             </div>
+             <div class="flip-card-back">
+               
+               <p>Famous for its pristine beaches, Goa is a haven for beach lovers and party enthusiasts. The laid-back lifestyle, Portuguese-influenced architecture, and vibrant nightlife make it a Popular tourist destination</p>
+              
+             </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="relative">
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  
+                  <img alt=" " class="w-full h-full object-cover rounded-lg" height="400" src="static/images/delhi copy.jpg" width="500"/>
+                 <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                     <h2 class="text-lg font-bold" style="text-align:left; font-family: Garamond;">Delhi</h2>
+                     <p class="text-sm"></p>
+                 </div>
+             </div>
+             <div class="flip-card-back">
+               
+               <p>The capital city of India, Delhi, is a historical and cultural treasure trove. From the grandeur of the Red Fort and Qutub Minar to the serene beauty of the Lotus Temple, Delhi offers a captivating journey through India's past and present. It's also a food lover's paradise.</p>
+               
+             </div>
+          </div>
+      </div>
+  </div>
+  <div class="relative">
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  
+                  <img alt=" "class="w-full h-full object-cover rounded-lg" height="400" src="static/images/agra copy.jpg" width="500"/>
+
+                 <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                     <h2 class="text-lg font-bold" style="text-align:left; font-family: Garamond;">Agra</h2>
+                     <p class="text-sm"></p>
+                 </div>
+             </div>
+             <div class="flip-card-back">
+               <p>Home to the magnificent Taj Mahal, Agra is synonymous with timeless beauty and love. The city also boasts other architectural marvels like Agra Fort and Fatehpur Sikri. It's a testament to the grandeur of Mughal architecture.</p>
+              
+             </div>
+          </div>
+      </div>
+  </div>
+  <div class="relative">
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  
+                  <img alt="" class="w-full h-full object-cover rounded-lg" height="400" src="static/images/hyderabad copy.jpg" width="500"/>
+                 <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+                     <h2 class="text-lg font-bold" style="text-align:left; font-family: Garamond;">Hyderabad</h2>
+                     <p class="text-sm"></p>
+                 </div>
+             </div>
+             <div class="flip-card-back">
+               <p>Known as the "City of Pearls," Hyderabad is a perfect blend of history and modernity. The city is renowned for its rich heritage, including the Charminar and Golconda Fort. It's also a culinary delight, with the famous Hyderabadi biryani taking center stage.</p>
+  
+             </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+</div>
+<div style="height:50px;"></div> 
+
+
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <h6 class="section-title text-start text-primary text-uppercase" id="mb-6">About Us</h6>
+        <h1 class="mb-4" id="mb-4">Welcome to <span class="text-primary text-uppercase ">Stay Finder</span></h1>
+        <p class="mb-4" id="mb-5">Experience luxury with top-notch services and exceptional hospitality.</p>
+        <div class="row g-3 pb-4">
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+            <div class="border rounded p-1">
+              <div class="border rounded text-center p-4">
+                <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
+                <h2 class="mb-1 counter" data-target="1234">0</h2>
+                <p class="mb-0">Rooms</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+            <div class="border rounded p-1">
+              <div class="border rounded text-center p-4">
+                <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
+                <h2 class="mb-1 counter" data-target="567"></h2>
+                <p class="mb-0">Staffs</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+            <div class="border rounded p-1">
+              <div class="border rounded text-center p-4">
+                <i class="fa fa-users fa-2x text-primary mb-2"></i>
+                <h2 class="mb-1 counter" data-target="890"></h2>
+                <p class="mb-0">Clients</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-6 text-end">
+            <img class="img-fluid rounded w-75 zoomIn" src="static/images/about-1.jpg" style="margin-top: 25%; margin-left:70px;">
+          </div>
+          <div class="col-6 text-start">
+            <img class="img-fluid rounded w-100 zoomIn" src="static/images/about-2.jpg" style="margin-right: 20px;">
+          </div>
+          <div class="col-6 text-end">
+            <img class="img-fluid rounded w-50 zoomIn" src="static/images/about-3.jpg" style="margin-left:140px;">
+          </div>
+          <div class="col-6 text-start">
+            <img class="img-fluid rounded w-75 zoomIn" src="static/images/about-4.jpg" style="margin-right:20px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function startCounters() {
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    counter.textContent = '0';
+    const target = +counter.getAttribute('data-target');
+    const increment = target / 100;
+    let current = 0;
+    const updateCounter = () => {
+      if (current < target) {
+        current += increment;
+        counter.textContent = Math.ceil(current);
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target;
+      }
+    };
+    updateCounter();
+  });
+}
+
+// Trigger counters when in view
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startCounters();
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+document.querySelectorAll('.counter').forEach(counter => observer.observe(counter));
+</script>
+
+<section class="rooms">
+  <div class="container top">
+    <div class="heading">
+      <h1>EXPLORE</h1>
+      <h2>Our Rooms</h2>
+      <br>
+      <h4 style="color:black; font-size:20px; text-align: left;">“Enjoy luxurious comfort in our elegantly designed rooms with modern amenities and stunning views.”</h4>
+    </div>
+
+    <div class="content mtop">
+      <div class="owl-carousel owl-carousel1 owl-theme">
+        <div class="items rooms" >
+          <div class="image">
+            <img src="/static/images/room-1.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            
+            <h4>“Elevate your stay with our superior rooms, offering premium amenities and stunning views.”
+            </h4>
+            <div class="button flex">
+              <button type="button" class="btn btn-primary" style="margin-top:10px;"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="items rooms">
+          <div class="image">
+            <img src="/static/images/room-2.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            <h4>Experience the charm of Goa's coastline at this iconic resort, offering serene beaches, luxurious spa treatments, and a blend of modern comforts with colonial heritage</h4>
+            <div class="button flex">
+           
+              <button type="button" class="btn btn-primary" style="margin-top:10px;"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="items rooms">
+          <div class="image">
+            <img src="/static/images/room-3.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            <h4>Indulge in experiences overlooking the Arabian Sea, where warm hospitality meets stunning views and culinary delights, perfect for both leisure and business travelers.</h4>
+            <div class="button flex">
+    
+              <button type="button" class="btn btn-primary" style="margin-top:10px;"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+   
+            </div>
+          </div>
+        </div>
+        <div class="items rooms">
+          <div class="image">
+            <img src="/static/images/room-4.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            <h4>“Elevate your stay with our superior rooms, offering premium amenities and stunning views.”
+            </h4>
+            <div class="button flex">
+
+              <button type="button" class="btn btn-primary" style="margin-top:10px;"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+       
+            </div>
+          </div>
+        </div>
+        <div class="items rooms">
+          <div class="image">
+            <img src="/static/images/room-5.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            <h4>Experience the charm of Goa's coastline at this iconic resort, offering serene beaches, luxurious spa treatments, and a blend of modern comforts with colonial heritage</h4>
+            <div class="button flex">
+           
+              <button type="button" class="btn btn-primary" style="margin-top:10px;"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+          
+            </div>
+          </div>
+        </div>
+        <div class="items rooms">
+          <div class="image">
+            <img src="/static/images/room-6.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            <h4>Indulge in experiences overlooking the Arabian Sea, where warm hospitality meets stunning views and culinary delights, perfect for both leisure and business travelers.</h4>
+            <div class="button flex">
+              
+              <button type="button" class="btn btn-primary" style="margin-top:10px;"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+       
+            </div>
+          </div>
+        </div>
+        <div class="items rooms">
+          <div class="image">
+            <img src="/static/images/room-7.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            <h4>“Elevate your stay with our superior rooms, offering premium amenities and stunning views.”
+            </h4>
+            <div class="button flex">
+             
+              <button type="button" class="btn btn-primary" style="margin-top:10px;"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+       
+            </div>
+          </div>
+        </div>
+        <div class="items rooms">
+          <div class="image">
+            <img src="/static/images/room-8.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Suporior Rooms</h2>
+            <div class="rate flex">
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+              <i class="fa fa-star" style="color: gold;"></i>
+            </div>
+            <h4>Experience the charm of Goa's coastline at this iconic resort, offering serene beaches, luxurious spa treatments, and a blend of modern comforts with colonial heritage</h4>
+            <div class="button flex">
+       
+              <button type="button" class="btn btn-primary" style="margin-top:10px; "><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $('.owl-carousel1').owlCarousel({
+    loop: true,
+    margin: 40,
+    nav: true,
+    dots: false,
+    navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2,
+        margin: 10,
+      },
+      1000: {
+        items: 3
+      }
+    }
+  })
+</script>
+
+
+<section class="gallery">
+  <div class="container top">
+    <div class="heading">
+      <h1>PHOTOS</h1>
+      <h2>Our Gallery</h2>
+      <br>
+      <h4 style="font-size:20px; text-align: left;">“Explore our gallery to catch a glimpse of our beautiful rooms, luxurious amenities, and unforgettable experiences.”
+      </h4>
+      </p>
+    </div>
+  </div>
+
+  <div class="content mtop">
+    <div class="owl-carousel owl-carousel1 owl-theme">
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-1.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-2.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-3.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-4.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-5.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-6.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-4.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-3.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-1.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="/static/images/gallery-6.png" alt="">
+        </div>
+        <div class="overlay">
+          <span class="fa fa-plus"> </span>
+          <h3>Photo Title Here.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $('.owl-carousel1').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true,
+    navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 4,
+      },
+      1000: {
+        items: 6
+      }
+    }
+  })
+</script>
+
+
+<section class="services top">
+  <div class="container">
+    <div class="heading">
+      <h1>SERVICES</h1>
+      <h2>Our Services</h2>
+      <br>
+      <h4 style="font-size:20px; text-align: left;">“Indulge in luxury with our world-class amenities, impeccable service, and unforgettable experiences.”</h4>
+    </div>
+
+
+    <div class="content flex_space">
+      <div class="left grid2">
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <h3>Delious Food</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-person-biking"></i>
+            <h3>Fintness</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-utensils"></i>
+            <h3>Inhouse Restaurant</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-spa"></i>
+            <h3>Beauty Spa</h3>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <img src="/static/images/service.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $('.owl-carousel2').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 1,
+      },
+      1000: {
+        items: 1
+      }
+    }
+  })
+</script>
+<section class="news top rooms">
+  <div class="container">
+    <div class="heading">
+      <h1>NEWS</h1>
+      <h2>Our News</h2>
+      <br>
+      <h4 style="font-size:20px; text-align: left;">“Stay updated with the latest news and events at our hotel.”</h4>
+    </div>
+    <div class="content flex">
+      <div class="left grid2">
+        <div class="items">
+          <div class="image">
+            <img src="/static/images/blog-1.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Finibus bonorum malorm.</h2>
+            <div class="admin flex">
+              <i class="fa fa-user"></i>
+              <label>Admin</label>
+              <i class="fa fa-heart"></i>
+              <label>500</label>
+              <i class="fa fa-comments"></i>
+            </div>
+            <p>Reliable and Trustworthy: "I've used this website multiple times, and I've never had any issues with my bookings. The site is reliable, and I trust it to provide accurate information and secure transactions."</p>
+          </div>
+        </div>
+        <div class="items">
+          <div class="image">
+            <img src="/static/images/blog-2.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Finibus bonorum malorm.</h2>
+            <div class="admin flex">
+              <i class="fa fa-user"></i>
+              <label>Admin</label>
+              <i class="fa fa-heart"></i>
+              <label>500</label>
+              <i class="fa fa-comments"></i>
+            </div>
+            <p>
+              Detailed Hotel Information: "The website provides detailed information about each hotel, including amenities, location, and guest reviews. This helps me make informed decisions and ensures I have a pleasant stay."
+              </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="box flex">
+          <div class="img">
+            <img src="/static/images/blog-s1.png" alt="" style="width: 400px;">
+          </div>
+          <div class="stext">
+            <h2>Etiam Vel Nequ</h2>
+            <p>Competitive Prices: "I always find the best deals on this website. The prices are competitive, and there are often special offers and discounts available. It's my go-to site for booking hotels."</p>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="img">
+            <img src="/static/images/blog-s2.png" alt="" style="width:400px;">
+          </div>
+          <div class="stext">
+            <h2>Etiam Vel Nequ</h2>
+            <p>Experience the charm of Goa's coastline at this iconic resort, offering serene beaches, luxurious spa treatments, and a blend of modern comforts with colonial heritage</p>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="img">
+            <img src="/static/images/blog-s3.png" alt="" style="width:400px;">
+          </div>
+          <div class="stext">
+            <h2>Etiam Vel Nequ</h2>
+            <p>Indulge in experiences overlooking the Arabian Sea, where warm hospitality meets stunning views and culinary delights, perfect for both leisure and business travelers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="newsletter mtop">
+  <div class="container flex_space">
+  </div> 
+</section>
+
+    
+{% endblock %}

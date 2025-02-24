@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% block title %}
+    
+   {% endblock %}
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  {% block contentStyle %}
+    
+  {% endblock %}
+</head>
+
+<body>
+
+
+  <header>
+    <div class="content flex_space">
+      <div class="logo" >
+        <img src="/static/images/stayfinderlogo.jpg" alt=""> 
+        <h1 style="display:inline; top:25px; left:80px; position: absolute; font-size: 30px; color:skyblue; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" >Stay Finder</h1>
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="{{ url_for('home' ) }}">home</a></li>
+          <li><a href="{{ url_for('about' ) }}">about</a> </li>
+          <li>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  style="border-color:white">Cities</a>
+                <div class="dropdown-menu rounded-0 m-0" >
+                  <a href="{{ url_for('mumbai' ) }}" class="dropdown-item" style="color: #000;">Mumbai</a>
+                  <a href="{{ url_for('bengaluru' ) }}" class="dropdown-item" style="color: #000;">Bengaluru</a>
+                  <a href="{{ url_for('delhi' ) }}" class="dropdown-item" style="color: #000;">Delhi</a>
+                  <a href="{{ url_for('agra' ) }}" class="dropdown-item" style="color: #000;">Agra</a>
+                  <a href="{{ url_for('goa' ) }}" class="dropdown-item" style="color: #000;">Goa</a>
+                  <a href="{{ url_for('hyderabad' ) }}" class="dropdown-item" style="color: #000;">Hyderabad</a>
+                </div>
+          </div>
+          </li>
+          
+          <li><a href="{{ url_for('contact' ) }}">contact Us</a> </li>
+          <li>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </li>
+        
+
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </header>
+  <script>
+    
+    var menulist = document.getElementById('menulist');
+    menulist.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menulist.style.maxHeight == "0px") {
+        menulist.style.maxHeight = "100vh";
+      } else {
+        menulist.style.maxHeight = "0px";
+      }
+    }
+  </script>
+  {% block section %}
+    
+  
+  {% endblock %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+ 
+
+ {% block content %}
+  
+
+ {% endblock %}
+<div id="footer">
+
+  <footer style="height:500px; background-color: black;">
+      <div class="container grid">
+        <div class="box">
+        
+          <p>“Discover the ultimate hotel booking experience at [Hotel Name]. Our user-friendly website offers seamless reservations, exclusive deals, and detailed information on a wide range of luxurious accommodations. Whether you're planning a business trip or a relaxing getaway, find your perfect stay with ease at [Hotel Name].”
+        .</p>
+  
+        <div class="icon">
+          <i class="fa fa-facebook-f fa-2x"></i>
+          <i class="fa fa-instagram fa-2x"></i>
+          <i class="fa fa-twitter fa-2x"></i>
+          <i class="fa fa-youtube fa-2x"></i>
+      </div>
+      
+        </div>
+  
+        <div class="box">
+          <h2>Links</h2>
+          <ul>
+            <li>Company History</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Services</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+  
+        <div class="box">
+          <h2>Contact Us</h2>
+          <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+          </p>
+          <i class="fa fa-location-dot fa-2x"></i>
+          <label>1201 park street, Avenue, Dhanmondy, Dhaka. </label> <br>
+          <i class="fa fa-phone fa-2x"></i>
+          <label>[88] 657 524 332</label> <br>
+          <i class="fa fa-envelope fa-2x"></i>
+          <label>info@dentar.com</label> <br>
+        </div>
+      </div>
+      <p class="container">Copyright (c) 2022 Copyright Holder All Rights Reserved.</p>
+  </footer>
+</div>
+
+  <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

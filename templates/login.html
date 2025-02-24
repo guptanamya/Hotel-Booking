@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('https://storage.googleapis.com/a1aa/image/TwdrL9erwTFVDdMZip0GDjLksIdSxzWHyKCgnROo0ko.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head> 
+<body class="flex items-center justify-center min-h-screen bg-gray-900 bg-opacity-50 backdrop-blur-lg"> 
+    
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row max-w-4xl p-6">
+        <div class="md:w-1/2 relative">
+            <img alt="Luxurious hotel room with a beautiful view" class="w-full h-full object-cover" src="https://storage.googleapis.com/a1aa/image/TwdrL9erwTFVDdMZip0GDjLksIdSxzWHyKCgnROo0ko.jpg"/>
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <div class="text-center text-white p-4">
+                    <h1 class="text-3xl font-bold">WELCOME TO LUXURY</h1>
+                    <p class="mt-2">Experience the best stay with our premium services and beautiful locations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+
+            <form id="login" style="text-align: center;" method="POST" >
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold text-lg">Email Address</label> 
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="name@mail.com" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700 font-semibold text-lg">Password</label>
+                    <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="At least 8 characters" required>
+                </div>
+                <div class="mb-4">
+                    <label for="role">Select Role:</label>
+                    <select name="role" id="role" class="form-control" required>
+                    <option value="">Choose Role</option>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200 " type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+                <p class="mb-4" style="display:inline; font-size:15px;"> Dont have a accout<a href="{{ url_for('signup' ) }}"> SignUp</a></p>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

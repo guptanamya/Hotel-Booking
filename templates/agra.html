@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block title %}
+    
+{% endblock %}
+
+{% block contentStyle %}
+    
+{% endblock %}
+
+{% block section %}
+<main class="content">
+    <div class="hotel">
+        <div class="image-container">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/square600/521307093.webp?k=f235364406a565a0b26185964af768de3f42332184e25045ce8c6a6751d1b1bf&o=" alt="Hotel Image">
+            <button class="like-button">❤</button>
+        </div>
+        <div class="hotel-info">
+            <h3>Dazzling</h3>
+            <p>Well located in the centre of Agra, Dazzling provides air-conditioned rooms with free WiFi, free private parking and room service.</p>
+            <p><strong>Location:</strong> 6 km from center</p>
+            <p><strong>Price:</strong> ₹15,775</p>
+        </div>
+        <div class="rating-box">
+            <strong>Superb</strong>
+            <small>90 reviews</small>
+            <div class="rating">9.2</div>
+            <!-- <button class="show-prices"><a href="#">Book Now</a></button> -->
+            <button class="show-prices"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+        </div>
+    </div>
+    <div class="hotel">
+        <div class="image-container">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/square600/274850939.webp?k=9a805b1d51883e192b7441c2944bee25b50cc92bd89ca8c6547f8567fca25a50&o=" alt="Hotel Image">
+            <button class="like-button">❤</button>
+        </div>
+        <div class="hotel-info">
+            <h3>Radisson Hotel Agra</h3>
+            <p>Offering an outdoor pool and a restaurant, Radisson Hotel Agra is located in Agra. Free WiFi access is available. The famous and magnificent Taj Mahal is just 2 km away.</p>
+            <p><strong>Location:</strong> 4.3 km from center</p>
+            <p><strong>Price:</strong> ₹12,200</p>
+        </div>
+        <div class="rating-box">
+            <strong>Fabulous</strong>
+            <small>75 reviews</small>
+            <div class="rating">8.9</div>
+            <!-- <button class="show-prices"><a href="#">Book Now</a></button> -->
+            <button class="show-prices"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+        </div>
+    </div>
+    <div class="hotel">
+        <div class="image-container">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/square600/234182995.webp?k=46c152e6f828456f9d6858ee48543472d02b6a29e076a820645462476985420f&o=" alt="Hotel Image">
+            <button class="like-button">❤</button>
+        </div>
+        <div class="hotel-info">
+            <h3>Holiday Inn Agra MG Road an IHG Hotel</h3>
+            <p>Situated in Agra, 6.1 km from Agra Cantonment, Holiday Inn Agra MG Road an IHG Hotel features accommodation with an outdoor swimming pool, free private parking, a fitness centre and a garden.</p>
+            <p><strong>Location:</strong> 4.1 km from centre</p>
+            <p><strong>Price:</strong> ₹17,350</p>
+        </div>
+        <div class="rating-box">
+            <strong>Good</strong>
+            <small>120 reviews</small>
+            <div class="rating">9.0</div>
+            <!-- <button class="show-prices"><a href="#"> Book Now</a></button> -->
+            <button class="show-prices"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+        </div>
+    </div>
+    <div class="hotel">
+        <div class="image-container">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/square600/587086908.webp?k=05943b65c8f0ffb3a2b50e0bb1e985baa6e760bf12de689e82fddde7a63944e1&o=" alt="Hotel Image">
+            <button class="like-button">❤</button>
+        </div>
+        <div class="hotel-info">
+            <h3>Golden Tulip Agra</h3>
+            <p>Attractively situated in Agra, Golden Tulip Agra features air-conditioned rooms with free WiFi, free private parking and room service. </p>
+            <p><strong>Location:</strong> 4.1 km from centre</p>
+            <p><strong>Price:</strong> ₹12,650</p>
+        </div>
+        <div class="rating-box">
+            <strong>Good</strong>
+            <small>100 reviews</small>
+            <div class="rating">9.3</div>
+            <!-- <button class="show-prices"><a href="#"> Book Now</a></button> -->
+            <button class="show-prices"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+        </div>
+    </div>
+    <div class="hotel">
+        <div class="image-container">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/square600/536802173.webp?k=002dad4cef85f9ed9af44e64328d6fd26b1de94d1ed17cd44f166394d198e3a2&o=" alt="Hotel Image">
+            <button class="like-button">❤</button>
+        </div>
+        <div class="hotel-info">
+            <h3>Royale Sarovar Portico Agra</h3>
+            <p>Conveniently situated in Agra, Royale Sarovar Portico Agra provides air-conditioned rooms with free WiFi, free private parking and room service. </p>
+            <p><strong>Location:</strong> 9.3 km from centre</p>
+            <p><strong>Price:</strong> ₹18,900</p>
+        </div>
+        <div class="rating-box">
+            <strong>superb</strong>
+            <small>68 reviews</small>
+            <div class="rating">9.3</div>
+            <!-- <button class="show-prices"><a href="#"> Book Now</a></button> -->
+            <button class="show-prices"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+        </div>
+    </div>
+    <div class="hotel">
+        <div class="image-container">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/square600/539099649.webp?k=614eb524d910caff185160c25449b0bb8c8027c672233755d9aec06c3f68873e&o=" alt="Hotel Image">
+            <button class="like-button">❤</button>
+        </div>
+        <div class="hotel-info">
+            <h3>Hotel Avalon Palms Agra</h3>
+            <p>Hotel Avalon Palms Agra is located in Agra, within 2.2 km of Taj Mahal and 8.1 km of Agra Cantonment. This 4-star hotel offers room service, a 24-hour front desk and free WiFi.</p>
+            <p><strong>Location:</strong> 11 km from centre</p>
+            <p><strong>Price:</strong> ₹13,400</p>
+        </div>
+        <div class="rating-box">
+            <strong>Fabulous</strong>
+            <small>96 reviews</small>
+            <div class="rating">9.6</div>
+            <!-- <button class="show-prices"><a href="#"> Book Now</a></button> -->
+            <button class="show-prices"><a href="{{ url_for('booking' ) }}">Book Now</a></button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    
+{% endblock %}

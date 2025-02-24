@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% block contentStyle %}
+<style>
+ .body1{
+    font-family: Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(to bottom, #cfe2ff, #ffffff); */
+ }
+.container23 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+
+/* .text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1e3a8a;
+} */
+
+.content23 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1e3a8a;
+}
+
+
+
+
+input, textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #b3c7e6;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+
+.thank-you-message {
+  color: green;
+  font-size: 1.2rem;
+}
+
+.contact-info .info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  color: #1e3a8a;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #2563eb;
+}
+
+.location img {
+  width: 100%;
+  border-radius: 10px;
+}
+.main23{
+  font-size: 40px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+.faq-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+  </style>
+{% endblock %}
+
+{% block section %}
+<section class="home">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="1000">
+        <img src="/static/images/banner-1.png"  class="d-block w-100" alt="...">
+        <div class="text">
+          <h1>Spend Your Holiday</h1>
+          <h4>"Your Perfect Stay, Just a Click Away!"</h4>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="1500">
+        <img src="/static/images/banner-2.png"  class="d-block w-100" alt="...">
+        <div class="text">
+          <h1>Spend Your Holiday</h1>
+          <h4>"Your Perfect Stay, Just a Click Away!"</h4>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="1500">
+        <img src="/static/images/banner-3.png" class="d-block w-100" alt="...">
+        <div class="text">
+          <h1>Spend Your Holiday</h1>
+          <h4>"Your Perfect Stay, Just a Click Away!"</h4>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+
+</section>
+<div class="main23">Contact For Any Query</div> 
+{% endblock %}
+{% block content %}
+<body class="body1">
+<div class="container23">
+    <header style="  text-align: center; margin-bottom: 3rem;">
+      <h1>Get in Touch</h1>
+    </header>
+
+    <div class="content23">
+      <div class="form-container">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <input type="text" placeholder="Your Name" required id="name" />
+          <input type="email" placeholder="Your Email" required id="email" />
+          <input type="text" placeholder="Subject" required id="subject" />
+          <textarea placeholder="Your Message" required id="message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div id="thankYouMessage" class="thank-you-message" style="display: none;">
+          Thank you for your message! We'll get back to you soon.
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <div class="info">
+          <h2>Contact Information</h2>
+          <div class="info-item">
+            <span class="icon">📍</span>
+            <span>123 Innovation Drive, Tech City, TC 12345</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">📞</span>
+            <span>+1 (555) 123-4567</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">✉</span>
+            <span>contact@techcompany.com</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">🕒</span>
+            <span>Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</span>
+          </div>
+        </div>
+
+        <div class="social">
+          <h2>Connect With Us</h2>
+          <div class="social-icons">
+            <a href="#" class="social-icon">🔵</a>
+            <a href="#" class="social-icon">🐦</a>
+            <a href="#" class="social-icon">📸</a>
+            <a href="#" class="social-icon">🔗</a>
+          </div>
+        </div>
+
+        <div class="location">
+          <h2>Our Location</h2>
+          <img src="/placeholder.svg" alt="Office Location" class="location-image">
+        </div>
+      </div>
+    </div>
+
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-items">
+        <div class="faq-item">
+          <h3>What are your business hours?</h3>
+          <p>We are open Monday to Friday from 9AM to 6PM, and Saturdays from 10AM to 4PM. We are closed on Sundays and public holidays.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How quickly do you respond to inquiries?</h3>
+          <p>We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call our office directly.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer virtual consultations?</h3>
+          <p>Yes, we offer virtual consultations via video call. Please mention your preference for a virtual meeting when you contact us.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How can I schedule an on-site visit?</h3>
+          <p>You can schedule an on-site visit by calling our office or filling out the contact form on this page. We'll get back to you to confirm the details.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</body>
+  <script>
+    // Example of form submission and message display
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('thankYouMessage').style.display = 'block';
+    });
+  </script>
+
+{% endblock %}
